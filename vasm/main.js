@@ -14,9 +14,9 @@ const emit = require("./emitter.js");
 
 const asm = `
 mov $0xABCD, %r0
-wme %r0, $0x1000
+mwx %r0, $0x1000
 mov $0x0FFF, %r0
-rme %r0, $1, %r1
+mrx %r0, $1, %r1
 hlt
 `;
 

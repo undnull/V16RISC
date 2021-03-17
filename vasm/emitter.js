@@ -140,8 +140,8 @@ module.exports = function(instructions) {
             continue;
         }
 
-        // RME
-        if(mnemonic === "RME") {
+        // MRX
+        if(mnemonic === "MRX") {
             if(instructions[i].args[0].prefix === '%') {
                 const rs = parseInt(/[rR]([0-7])/.exec(instructions[i].args[0].data)[1]);
                 const rd = parseInt(/[rR]([0-7])/.exec(instructions[i].args[2].data)[1]);
@@ -154,20 +154,23 @@ module.exports = function(instructions) {
             continue;
         }
 
-        // WME
-        if(mnemonic === "WME") {
+        // MWX
+        if(mnemonic === "MWX") {
             const rs = parseInt(/[rR]([0-7])/.exec(instructions[i].args[0].data)[1]);
             if(instructions[i].args[1].prefix === '%') {
                 const rd = parseInt(/[rR]([0-7])/.exec(instructions[i].args[1].data)[1]);
                 emit_mem(true, rs, rd, instructions[i].args[2].data);
             }
             else emit_mem(true, rs, null, instructions[i].args[1].data);
+            continue;
         }
 
         if(mnemonic === "HLT") {
             code.push(5, 0);
             continue;
         }
+
+        throw "Unknown mnemonic: " + mnemonic;
     }
 
     return Buffer.from(code);
