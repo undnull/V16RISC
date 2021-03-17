@@ -1,5 +1,5 @@
 /*
- * codegen.js
+ * emitter.js
  * Created: 2021-03-17, 21:37:28.
  * Copyright (C) 2021, Kirill GPRB.
  * 
