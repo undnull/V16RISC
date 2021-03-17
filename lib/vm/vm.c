@@ -161,7 +161,7 @@ static int vm_bxx(vm_t *vm, const v16_instr_t *in)
             jump = *rs_1 != *rs_2;
             break;
         
-        case V16_COND_GX:
+        case V16_COND_XG:
             jump = *rs_1 > *rs_2;
             break;
         
@@ -169,7 +169,7 @@ static int vm_bxx(vm_t *vm, const v16_instr_t *in)
             jump = *rs_1 >= *rs_2;
             break;
         
-        case V16_COND_LX:
+        case V16_COND_XL:
             jump = *rs_1 < *rs_2;
             break;
         

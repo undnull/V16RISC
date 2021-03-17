@@ -97,9 +97,9 @@ typedef union {
 #define V16_COND_UN     0x00
 #define V16_COND_EQ     0x01
 #define V16_COND_NE     0x02
-#define V16_COND_GX     0x03
+#define V16_COND_XG     0x03
 #define V16_COND_GE     0x04
-#define V16_COND_LX     0x05
+#define V16_COND_XL     0x05
 #define V16_COND_LE     0x06
 
 #define V16_REG_R0      0x00
