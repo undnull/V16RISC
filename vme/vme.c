@@ -107,8 +107,7 @@ int main(int argc, char **argv)
 
         if(!strcmp(command, "memdump")) {
             size_t start, end;
-            printf(" from: "); scanf("%4zx", &start);
-            printf(" to: "); scanf("%4zx", &end);
+            scanf("%4zx%4zx", &start, &end);
 
             for(size_t i = start; i <= end; i++) {
                 printf("%04zX  ", i);
