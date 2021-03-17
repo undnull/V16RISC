@@ -13,13 +13,10 @@ const parse = require("./parser.js");
 const emit = require("./emitter.js");
 
 const asm = `
-beq %r0, %r1, $0x0003
-hlt
-mov $1000, %r0
-mov $337, %r1
-add %r0, %r1, %r2
-mov $1337, %r6
-beq %r6, %r2, %r2, $0
+mov $0xABCD, %r0
+wme %r0, $0x1000
+mov $0x0FFF, %r0
+rme %r0, $1, %r1
 hlt
 `;
 
