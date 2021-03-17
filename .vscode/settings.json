@@ -1,0 +1,4 @@
+{
+    "C_Cpp.default.cStandard": "gnu99",
+    "C_Cpp.default.includePath": [ "./include" ]
+}
