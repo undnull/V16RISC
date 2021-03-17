@@ -17,7 +17,7 @@ static void pretty_print(uint16_t word)
 {
     uint8_t lo = (word >> 8) & 0xFF;
     uint8_t hi = word & 0xFF;
-    printf("%04X  %02X %02X  %c%c\n", word, hi, lo, isprint(hi) ? hi : '.', isprint(lo) ? lo : '.');
+    printf("%04X  %02X %02X  %c%c  %d\n", word, hi, lo, isprint(hi) ? hi : '.', isprint(lo) ? lo : '.', word);
 }
 
 int main(int argc, char **argv)
