@@ -54,8 +54,8 @@ module.exports = function(instructions) {
         value |= (rs << 5) & 0xFFFF;
         value |= (rd << 8) & 0xFFFF;
         if(imm <= 0x0F) {
-            value |= (1 << 9) & 0xFFFF;
-            value |= (imm << 10) & 0xFFFF;
+            value |= (1 << 11) & 0xFFFF;
+            value |= (imm << 12) & 0xFFFF;
             pack = true;
         }
         code.push(value & 0xFF, (value >> 8) & 0xFF);
@@ -166,7 +166,9 @@ module.exports = function(instructions) {
         }
 
         if(mnemonic === "HLT") {
-            code.push(5, 0);
+            let value = 0;
+            value |= 5; // V16_OPCODE_HLT
+            code.push(value & 0xFF, (value >> 8) & 0xFF);
             continue;
         }
 
