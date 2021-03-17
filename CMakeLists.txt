@@ -13,8 +13,12 @@ project(V16 VERSION 0.0.0)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/bin")
+
 add_library(v16_headers INTERFACE)
 target_include_directories(v16_headers INTERFACE "${CMAKE_CURRENT_LIST_DIR}/include")
 
 add_subdirectory(lib/vm)
+add_subdirectory(vasm)
 add_subdirectory(vme)
